@@ -1,0 +1,18 @@
+import random, time, operator
+print('-=-'*15)
+print(f'{"           JOGO DE DADOS EM PYTHON"}')
+print('-=-'*15)
+jogos = { 'Jogador 1': random.randint(1, 6),
+          'Jogador 2': random.randint(1,6),
+          'Jogador 3': random.randint(1,6),
+          'Jogador 4': random.randint(1,6)
+          }
+print('VALORES SORTEADOS:')
+print('-=-'*7)
+for chave, valor in jogos.items():
+    print(f'{chave} jogou: {valor}')
+    time.sleep(1)
+print('-=-'*15)
+ranking = sorted(jogos.items(), key=operator.itemgetter(1), reverse=True)
+for indice, valor in enumerate(ranking):
+    print(f'{indice+1}º lugar: {valor[0]} com {valor[1]} pontos')
