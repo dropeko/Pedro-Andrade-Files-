@@ -1,0 +1,28 @@
+def notas(*nums, situacao=False):
+    """
+    -> Função para analisar as notas e várias situações dos alunos
+    :param nums: uma ou mais notas dos alunos (aceita várias)
+    :param situacao: valor opcional, indicando se deve mostrar ou não a situação dos alunos
+    :return: dicionário com várias informações sobre a situação da turma
+    """
+    respslocal = dict()
+    respslocal['Total'] = len(nums)
+    respslocal['Maior Nota'] = max(nums)
+    respslocal['Menor Nota'] = min(nums)
+    respslocal['Média Turma'] = sum(nums) / len(nums)
+    if situacao:
+        if respslocal['Média Turma'] > 7:
+            respslocal['Situação'] = 'BOA'
+        elif respslocal['Média Turma'] >= 5:
+            respslocal['Situação'] = 'RAZOÁVEL'
+        else:
+            respslocal['Situação'] = 'RUIM'
+    return respslocal
+
+
+#Programa principal
+print('-=-'*15)
+print(f'{"ANALISANDO E GERANDO DICIONÁRIOS":^45}')
+print('-=-'*15)
+resp = notas(5.5, 9.5, 7.7, 8.7, situacao=True)
+print(resp)
