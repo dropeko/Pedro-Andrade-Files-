@@ -1,0 +1,21 @@
+def ficha(nomeJ='<desconhecido>', gols=0):
+    print(f'O jogador {nomeJ} marcou {gols} gols no campeonato!')
+
+#Programa Principal
+print('-=-'*10)
+print(f'{"FUNÇÃO PARA FICHA JOGADOR":^30}')
+print('-=-'*10)
+nome = str(input('Digite o nome do jogador: '))
+golsglobal = str(input('Quantos gols fez no campeonato?: '))
+if golsglobal.isnumeric():
+    golsglobal = int(golsglobal)
+else:
+    gols = 0
+if nome.strip() == '':
+    ficha(gols = golsglobal)
+else:
+    ficha(nome, golsglobal)
+
+
+
+
