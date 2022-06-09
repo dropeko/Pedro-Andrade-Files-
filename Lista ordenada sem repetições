@@ -1,0 +1,21 @@
+print('-=-'*10)
+print('LISTA ORDENADA SEM REPETIÇÃO')
+print('-=-'*10)
+lista = list() #Iniciando uma lista vazia
+for cont in range(0, 5):
+    num = int(input('Digite um valor: '))
+    if cont == 0: # Verificando se é o primeiro numero digitado e adicionando de forma ordenada na lista
+        lista.append(num)
+    elif num > lista[-1]: # Verificando se é o maior número digitado e adicionando de forma ordenada na lista
+        lista.append(num)
+    else: # Varrendo o vetor e verificando em qual posição o numero digitado vai ser inserido
+        posicao = 0
+        while posicao < len(lista): # Enquanto a posição foi menor que o tamanho de elementos da lista
+            if num <= lista[posicao]:
+                lista.insert(posicao, num)
+                break
+            posicao = posicao + 1
+print('-=-'*10)
+print(f'Os valores digitados em ordem: {lista}')
+
+
