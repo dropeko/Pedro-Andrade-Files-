@@ -1,0 +1,21 @@
+print('-=-'*15)
+print('   CADASTRO DE JOGADOR EM PYTHON')
+print('-=-'*15)
+cadastro = dict()
+partidas = list()
+cadastro['Nome'] = str(input('Nome do Jogador: '))
+totpartidas = int(input(f'Quantas partidas {cadastro["Nome"]} jogou?: '))
+for cont in range(0, totpartidas):
+    partidas.append(int(input(f'Quantos gols na partida {cont+1}?: ')))
+cadastro['Gols'] = partidas[:]
+cadastro['Total de Gols'] = sum(partidas)
+print('-=-'*15)
+print(cadastro)
+print('-=-'*15)
+for chave, valor in cadastro.items():
+    print(f'O {chave} tem valor {valor}')
+print('-=-'*15)
+print(f'O jogador {cadastro["Nome"]} tem {len(cadastro["Gols"])} partidas!')
+for indice, valor in enumerate(cadastro['Gols']):
+    print(f' -> Na partida {indice+1} fez {valor} gols!')
+print(f'O total de gols foi de: {cadastro["Total de Gols"]}')
