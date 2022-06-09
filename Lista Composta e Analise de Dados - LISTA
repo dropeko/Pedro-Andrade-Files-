@@ -1,0 +1,28 @@
+print('-=-'*15)
+print('       LISTA COMPOSTA E ANALISE DE DADOS')
+print('-=-'*15)
+contpessoas = 0 #Contador para as pessoas cadastradas
+pessoa = list() #Uma lista para receber os dados de cada pessoa
+galera = list() #Uma lista para guardar todas as pessoas cadastradas
+leve = list() #Uma lista para receber as pessoas com menos de 70KG
+pesado = list() #Uma lista para receber as pessoas com mais de 70kg
+while True:
+    pessoa.append(str(input('Digite o nome da pessoa: ')))
+    pessoa.append(float(input('Digite o peso da pessoa (KG): ')))
+    if pessoa[1] > 70:
+        galera.append(pessoa[:])
+        pesado.append(pessoa[:])
+        pessoa.clear()
+    else:
+        galera.append(pessoa[:])
+        leve.append(pessoa[:])
+        pessoa.clear()
+    resp = str(input('Quer continuar? [S/N]: ')).strip().upper()[0]
+    contpessoas = contpessoas + 1
+    if resp == 'N':
+        break
+print('-=-'*15)
+print(f'O total de pessoas cadastradas foi: {contpessoas}')
+print(f'As pessoas cadastradas foram: {galera}')
+print(f'As pessoas com MAIS de 70kg: {pesado}')
+print(f'As pessoas com MENOS de 70kg: {leve} ')
