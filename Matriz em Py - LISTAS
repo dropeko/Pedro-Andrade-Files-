@@ -1,0 +1,31 @@
+print('-=-'*15)
+print('     MATRIZES EM PYTHON')
+print('-=-'*15)
+matriz = [[0, 0, 0], [0, 0, 0], [0, 0, 0]] #Criando uma matriz 3x3 com valores ''vazios''
+somapar = 0
+soma3colu = 0
+maior2lin = 0
+for linha in range(0, 3): #Varrendo a matriz por linhas e colunos para armazenar o valor de cada espaço
+    for coluna in range(0, 3):
+        matriz[linha][coluna] = int(input(f'Digite o valor da posição [{linha}, {coluna}] da matriz: '))
+print('-=-'*15)
+for linha in range(0, 3): #Varrendo a matriz a fim de imprimir o valor digitado para cada espaço
+    for coluna in range(0, 3): #Varrendo a matriz a fim de imprimir o valor digitado para cada espaço
+        print(f'[ {matriz[linha][coluna]:^5} ]', end='') #Varrendo a matriz a fim de imprimir o valor digitado para cada espaço
+        if matriz[linha][coluna] % 2 == 0: #Estrutura condicional a fim de verificar se o valor no laço é par
+            somapar = somapar + matriz[linha][coluna] #Se for par, é adicionado ao somatório de pares digitados
+    print()
+for linha in range(0, 3):#Estrutura for para varrer a matriz nas linhas para somar a 3ª coluna
+    soma3colu = soma3colu + matriz[linha][2]#Coluna fixa, o que varia é a linha
+for coluna in range(0, 3):#Estrutura for para varrer a matriz e verificar qual o maior digitado na 2ª linha
+    if coluna == 0:#Linha fixa, o que varia é a coluna
+        maior2lin = matriz[1][coluna]
+    else:
+        if matriz[1][coluna] > maior2lin:
+            maior2lin = matriz[1][coluna]
+
+#----------------##----------------##----------------##----------------##----------------##----------------##----------------##----------------#
+print('-=-'*15)#Imprimindo o resultado
+print(f'A soma dos valores pares digitados é: {somapar}')
+print(f'A soma dos valores da 3ª coluna é: {soma3colu}')
+print(f'O maior digitado da 2ª linha foi: {maior2lin}')
