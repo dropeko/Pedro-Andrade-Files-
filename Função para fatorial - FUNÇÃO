@@ -1,0 +1,25 @@
+def fatorial(num=1, show=False):
+    """
+    -> Calcula o fatorial de um número
+    :param num: Recebe o número a ser calculado
+    :param show: Parametro opicional a fim de verificar se mostra só o resultado ou toda a conta
+    :return: Retorna o valor fatorial de um número NUM
+    """
+    fat = 1
+    for cont in range(num, 0, -1):
+        if show:
+            print(cont, end='')
+            if cont > 1:
+                print(f' x ', end='')
+            else:
+                print(f' = ', end='')
+        fat = fat * cont
+    return fat
+
+#Programa Principal
+print('-=-'*10)
+print(f'{"FUNÇÃO PARA FATORIAL":^30}')
+print('-=-'*10)
+fat1 = int(input('Digite um número inteiro para calcular o fatorial: '))
+print(fatorial(fat1, show=True))
+help(fatorial())
