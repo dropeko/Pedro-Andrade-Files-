@@ -1,0 +1,28 @@
+print('-=-'*20)
+print('                MAIOR E MENOR VALOR NA LISTA')
+print('-=-'*20)
+maiorvalor = 0
+menorvalor = 0
+valores = list() # Iniciando a lista vazia
+for cont in range(0, 5): # Solicitando a entrada de 5 valores para a lista utilizando estrutura de repetiçao com variavel de controle
+    valores.append(int(input(f'Digite o {cont+1}º valor: ')))
+    if cont == 0: # Estrutura condicional a fim de verificar, enquanto a lista é alimentada, quem é o maior e o menor número digitado
+        maiorvalor = valores[cont]
+        menorvalor = valores[cont]
+    else:
+        if valores[cont] > maiorvalor:
+            maiorvalor = valores[cont]
+        if valores[cont] < menorvalor:
+            menorvalor = valores[cont]
+print('-=-'*20)
+print(f'A lista digitada foi: {valores}')
+print(f'O maior digitado foi: {maiorvalor} e foi digitado nas posições: ', end='')
+for indice, valor in enumerate(valores):
+    if valor == maiorvalor:
+        print(f'{indice}...', end='')
+print()
+print(f'O menor valor digitado foi: {menorvalor} e foi digitado nas posições: ', end='')
+for indice, valor in enumerate(valores):
+    if valor == menorvalor:
+        print(f'{indice}...', end='')
+
